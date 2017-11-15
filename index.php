@@ -11,10 +11,18 @@
     </head>
 
     <body>
-
         <img src="voetbal.jpg" >
 
-        <!--<a href="teams.php">maak teams aan</a>-->
+       
+        <script  src="new.js"></script>
+
+<button onclick="start()">start</button>
+
+<img id="myImage" src="soccer10.gif" style="width:100px">
+
+<button onclick="jojo()">stop</button>
+
+
         <form action="teams.php" method="get">
             <button type=submit value="teams"  >  teams aanmaken </button>
         </form>
@@ -70,8 +78,7 @@
     <br>
 
 
-
-    <?php include 'footer.php'; ?>
-</body>
+        <?php include 'footer.php'; ?>
+    </body>
 </html>
 
