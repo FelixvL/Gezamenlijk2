@@ -1,4 +1,6 @@
+
 <?php include 'generalfunctions.php'; ?>
+
 
 <html>
     <head>
@@ -12,6 +14,8 @@
     </head>
 
     <body>
+        
+         <img src="voetbal.jpg" >
 
         <!--<a href="teams.php">maak teams aan</a>-->
         <form action="teams.php" method="get">
@@ -19,6 +23,7 @@
         </form>
 
         <br> kleine verbetering aa
+
 
         <?php
         $conn = connectionDB();
@@ -60,3 +65,4 @@
 <?php include 'footer.php'; ?>
 </body>
 </html>
+
