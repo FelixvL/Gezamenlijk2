@@ -30,32 +30,22 @@
         echo createTagSelect($conn);
         echo createTagSelect($conn);
         ?>
-    <center>
-        <div style="overflow-x:auto; padding-top: 100px">
-            <table style="border: 2px">
+        
+        
+        
+        
+        <div style=" padding-top: 100px">
+            <table style="border: 2px" id="customers" cellspacing="0" cellpadding="0">
         <?php
-        $sql = "SELECT * FROM `elftal`;";
-        $result = $conn->query($sql);
-        echo "<tr>";
-        for ($x = 0; $x < $result->num_rows; $x++) {
-            $row = $result->fetch_assoc();
-            echo "<tr>";
-            echo "<td>";
-            echo $row['id'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['naam'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['plaats'];
-            echo "</td>";
-            echo "</tr>";
-        }
-        echo "</tr>";
+         $conn = connectionDB();
+         echo createtable($conn);
+         echo createtable($conn);
+        
         ?>  
             </table>
         </div>
-    </center>
+        
+        
 
 
     <br>
