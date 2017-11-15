@@ -1,10 +1,7 @@
-<?php
-$hostname = 'localhost';
-$databasenaam = 'sport_pool';
-$username = 'root';
-$password = '';
+<?php include 'generalfunctions.php'; ?>
 
-$conn = new mysqli($hostname, $username, $password, $databasenaam);
+<?php
+$conn=connectionDB();
 if (isset($_GET['naam'])) {
     $sql = "INSERT INTO `elftal`(`naam`, `plaats`)VALUES('" . $_GET['naam'] . "','" . $_GET['plaats'] . "')";
     $conn->query($sql);
