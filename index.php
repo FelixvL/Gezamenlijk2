@@ -15,7 +15,7 @@
 
     <body>
         
-         <img src="voetbal.jpg" >
+         <img id="voetbal" src="voetbal.jpg" >
 
         <!--<a href="teams.php">maak teams aan</a>-->
         <form action="teams.php" method="get">

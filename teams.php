@@ -12,8 +12,12 @@ if (isset($_GET['naam'])) {
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
+        
+        <style> </style>
+        
     </head>
     <body>
+        
         <!--<a href="index.php">terug</a>-->
         <form action="index.php" method="get">
             <button type=submit value="teams"  >  terug </button>
@@ -26,5 +30,6 @@ if (isset($_GET['naam'])) {
             <br>
             <input type="submit" value="voeg toe">
         </form>
+        <img id="team" src="football_team_1978.jpg" >
     </body>
 </html>
