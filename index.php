@@ -5,13 +5,10 @@
         
         
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">
-    <a href="teams.php"></a>
        
     </head>
    
     <body>
-
-      <a href="teams.php">maak teams aan</a>
         <form action="teams.php" method="get">
             <button type=submit value="teams"  >  teams aanmaken </button>
         </form>
@@ -22,6 +19,7 @@
 
 
 <?php
+
     $hostname='localhost';
     $databasenaam='sport_pool';
     $username='root';
