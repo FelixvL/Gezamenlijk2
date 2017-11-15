@@ -53,5 +53,6 @@ if (isset($_GET['naam'])) {
             <br>
             <input type="submit" value="voeg toe">
         </form>
+        <img id="team" src="football_team_1978.jpg" >
     </body>
 </html>

@@ -11,7 +11,10 @@
     </head>
 
     <body>
-        <img src="voetbal.jpg" >
+
+        
+         <img id="voetbal" src="voetbal.jpg" >
+
 
        
         <script  src="new.js"></script>
