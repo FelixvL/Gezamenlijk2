@@ -81,7 +81,6 @@
                 }
                 echo "</tr>";
                 ?>  
->>>>>>> 2c8ca0e9713d020c5a40c1ea84fae604e362ca68
             </table>
         </div>
         

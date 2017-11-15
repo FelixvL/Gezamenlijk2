@@ -29,7 +29,6 @@ function createTagSelect($ParamConn, $selectidname) {
 }
 
 
-<<<<<<< HEAD
 function createtable ($conn){
     
     $sql = "SELECT * FROM `elftal`;";
