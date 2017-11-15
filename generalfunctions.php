@@ -11,11 +11,11 @@ function connectionDB() {
     return $conn;
 }
 
-function createTagSelect($ParamConn) {
+function createTagSelect($ParamConn, $selectidname) {
     $sql = "SELECT * FROM `elftal`;";
     $erinResultSet = $ParamConn->query($sql);
 
-    $eruit = "<select>";
+    $eruit = "<select  id=$selectidname onChange=checkdouble(); >";
     for ($x = 0; $x < $erinResultSet->num_rows; $x++) {
         $row = $erinResultSet->fetch_assoc();
         $eruit .= "<option>";
@@ -29,6 +29,7 @@ function createTagSelect($ParamConn) {
 }
 
 
+<<<<<<< HEAD
 function createtable ($conn){
     
     $sql = "SELECT * FROM `elftal`;";
