@@ -1,13 +1,30 @@
-
 div {color: red}
 
-body {background-color: greenyellow}
+
+body {background-color: greenyellow }
+ img {float:right;}
+
 
 button {
     background-color: blue;
     color: whitesmoke
 }
+
+/*img {align= "right"}*/
 /*
 img {background-image: url("voetbal.jpg");opacity: 0.5; filter: alpha(opacity=50);}*/
 
 
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-left: auto;
+    padding-right: auto;
+    background-color: #555;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    
+}
