@@ -38,6 +38,14 @@
         echo createTagSelect($conn, "id1");
         echo createTagSelect($conn, "id2");
         ?>
+        <div style=" padding-top: 100px">
+            <table style="border: 2px" id="customers" cellspacing="0" cellpadding="0">
+        <?php
+         $conn = connectionDB();
+         echo createtable($conn);
+         echo createtable($conn);
+        
+        ?>  
         <script>
             function checkdouble() {
                 x = document.getElementById("id1").selectedIndex;
@@ -73,9 +81,11 @@
                 }
                 echo "</tr>";
                 ?>  
+>>>>>>> 2c8ca0e9713d020c5a40c1ea84fae604e362ca68
             </table>
         </div>
-    </center>
+        
+        
 
 
     <br>
