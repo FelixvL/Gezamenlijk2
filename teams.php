@@ -37,7 +37,16 @@ if (isset($_GET['naam'])) {
                 }
                 return "";
             }
-
+            function ajaxCallJojo(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert(xhttp.responseText);
+                    }
+                };
+                xhttp.open("GET", "voorbeeld.php", true);
+                xhttp.send();
+            }
             </script>
         
     </head>
@@ -45,7 +54,7 @@ if (isset($_GET['naam'])) {
         <form action="index.php" method="get"   >
             <button type=submit value="teams"  >  terug </button>
         </form>
-
+        <input type="button" onclick="ajaxCallJojo()" value="HIERKLIKKEN">
         <form action="teams.php" method="get"  onsubmit="return  validate(this)">
             Naam:<input type="text" name="naam">
             <br>
