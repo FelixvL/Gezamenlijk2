@@ -10,6 +10,8 @@
     </head>
    
     <body>
+        
+         <img src="voetbal.jpg" >
 
         <!--<a href="teams.php">maak teams aan</a>-->
         <form action="teams.php" method="get">
@@ -20,6 +22,7 @@
         
         <br> kleine verbetering aa
 
+       
 
 <?php
 
