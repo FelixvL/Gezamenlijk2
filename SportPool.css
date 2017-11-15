@@ -1,5 +1,9 @@
-div {color: red}
+div {color: red
+}
 
+body{
+    background-color: greenyellow;
+}
 
 body {background-color: greenyellow }
 #voetbal {float:right;}
