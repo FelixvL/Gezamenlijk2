@@ -1,11 +1,16 @@
 div {color: red}
 
 
+body {background-color: greenyellow }
+ img {float:right;}
+
 
 button {
     background-color: blue;
     color: whitesmoke
 }
+
+/*img {align= "right"}*/
 /*
 img {background-image: url("voetbal.jpg");opacity: 0.5; filter: alpha(opacity=50);}*/
 
