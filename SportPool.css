@@ -1,14 +1,32 @@
-div {color: red}
+div {color: red
+}
 
+body{
+    background-color: greenyellow;
+}
 
 body {background-color: greenyellow }
- img {float:right;}
+#voetbal {float:right;}
 
 
 button {
     background-color: blue;
     color: whitesmoke
 }
+
+#team { transition: filter .5s ease-in-out;
+-webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+}
+
+#team:hover{-webkit-filter: grayscale(100%);
+filter: grayscale(100%);}
+
+#team {display: block; 
+margin-top: 5%;       
+margin-bottom: auto;       
+margin-left: auto;
+margin-right: auto; }
 
 /*img {align= "right"}*/
 /*
