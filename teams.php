@@ -83,10 +83,6 @@ if (isset($_GET['naam'])) {
         </form>
 
         <img id="team" src="football_team_1978.jpg" >
-<<<<<<< HEAD
-
-=======
         <div id="teamDiv">startText</div>
->>>>>>> 29714ca97aec66ad41d0e529f11cabe638272f37
     </body>
 </html>
