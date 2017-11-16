@@ -34,10 +34,14 @@
             ?>
         </div>
         <?php
-        $conn = connectionDB();
-        echo createtable($conn);
-        echo createtable($conn);
-        ?>  
+
+         $conn = connectionDB();  
+         echo createtable($conn);
+         echo createtable($conn);
+        
+        ?> 
+               
+
         <script>
             function checkdouble() {
                 x = document.getElementById("id1").selectedIndex;

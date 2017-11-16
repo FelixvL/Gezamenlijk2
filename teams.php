@@ -66,6 +66,7 @@ if (isset($_GET['errorText'])) {
         
     </head>
     <body>
+
         
         <header> Football Pool </header>
         <nav>
@@ -77,9 +78,11 @@ if (isset($_GET['errorText'])) {
                 <a href="#about">About</a>
             </div>
         </nav>
+
             <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
 
         <form action="index.php" method="get"   >
+
             <button type=submit value="teams"  >  terug </button>
         </form>
 
@@ -105,17 +108,23 @@ if (isset($_GET['errorText'])) {
         
         <?php
 
+        
+         $hostname = 'localhost';            // the credentials of the connection
+         $databasenaam = 'sport_pool';
+         $username = 'root';
+         $password = '';
 
-        $hostname = 'localhost';            
-        $databasenaam = 'sport_pool';
-        $username = 'root';
-        $password = '';
+           $conn = new mysqli($hostname, $username, $password, $databasenaam);
+      echo "<table border = 2px color = black >";
+             $sql = "SELECT * FROM `elftal`";
+            $result = $conn->query($sql);
+                    for ($x = 0; $x <1; $x++) {
+            echo"<th>";echo"Team Id";echo"</th>";
+            echo"<th>";echo"Team a";echo"</th>";
+            echo"<th>";echo"Team place";echo"</th>";
+    }
+    for ($x = 0; $x < $result->num_rows; $x++) {
 
-        $conn = new mysqli($hostname, $username, $password, $databasenaam); 
-       echo "<table border = 2px color = black >";
-        $sql = "SELECT * FROM `elftal`";  
-        $result = $conn->query($sql);
-         for ($x = 0; $x < $result->num_rows; $x++) {
                      $row = $result->fetch_assoc();
                     echo "<tr>";
             echo "<td>";
@@ -127,19 +136,23 @@ if (isset($_GET['errorText'])) {
             echo "<td>";
             echo $row['plaats'];
             echo "</td>";
-            echo "</tr>";
-            }
-            echo"</tr>";
-   
-            echo '</table>';
-    
+
+          echo "</tr>";
+    }
+     echo"</tr>";
+    // Create connection
+$conn = new mysqli($hostname, $username, $password, $databasenaam);
+// Check connection
+
+
+$conn->close();
+?>
         ?>
         
-        <button onclick="Delete()">Delete</button>
-      
         
         
-        
-        
+       <button onclick="Delete()">Delete</button>
+       
+
     </body>
 </html>
