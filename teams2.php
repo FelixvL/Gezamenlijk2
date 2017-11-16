@@ -2,10 +2,18 @@
 
 <?php
 $conn = connectionDB();
+
 if (isset($_GET['naam'])) {
     $sql = "INSERT INTO `elftal`(`naam`, `plaats`)VALUES('" . $_GET['naam'] . "','" . $_GET['plaats'] . "')";
     $conn->query($sql);
-}
+//    echo $sql;
+} 
+
+if (isset($_GET['errorText'])) {
+    echo $_GET['errorText'];
+} 
+
+
 ?>
 
 
@@ -50,15 +58,15 @@ if (isset($_GET['naam'])) {
                 return "";
             }
             function ajaxCallJojo() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-//                        alert(xhttp.responseText);
-                     //   alert("in ajax");
-                    }
-                };
-                xhttp.open("GET", "komtTeamVoor.php", true);
-                xhttp.send();
+//                var xhttp = new XMLHttpRequest();
+//                xhttp.onreadystatechange = function () {
+//                    if (this.readyState == 4 && this.status == 200) {
+////                        alert(xhttp.responseText);
+//                     //   alert("in ajax");
+//                    }
+//                };
+//                xhttp.open("GET", "komtTeamVoor.php", true);
+//                xhttp.send();
             }
         </script>
 

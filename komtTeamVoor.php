@@ -13,20 +13,11 @@ if (!$connectie->connect_error) {
 
     $result = mysqli_query($connectie, $sql);
     if ($result->num_rows == 0) {
-        header("Location: inloggen.php?errorTxt=$returnText "); 
-        echo " niet gevonden";
-    } else
-        echo " WEL gevonden";
+        header("Location: teams2.php?naam=$naamTeam&plaats=$naamPlaats");
+    } else {
+        $errorText = "Bestaat al";
+        header("Location: teams2.php?errorText=$errorText");
+    }
 }
-    
-
-
-
-if ($returnText != "") {
-            header("Location: inloggen.php?errorTxt=$returnText ");   // terug naar index.php
-        } else {
-            $returnText = "User is toegevoegd";
-            header("Location: inloggen.php?errorTxt=$returnText ");   // terug naar index.php
-        }
 
 
