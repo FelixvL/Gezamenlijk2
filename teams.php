@@ -15,6 +15,7 @@ if (isset($_GET['errorText'])) {
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
+         <script  src="new.js"></script>  <!-- import of external js file called new.js -->
         <script>
                 function searchTeam(){
                 var searchString = document.getElementById("inputTextFieldTeam").value;
@@ -100,5 +101,45 @@ if (isset($_GET['errorText'])) {
 
         <img id="team" src="football_team_1978.jpg" >
         <div id="teamDiv">startText</div>
+        
+        
+        <?php
+
+
+        $hostname = 'localhost';            
+        $databasenaam = 'sport_pool';
+        $username = 'root';
+        $password = '';
+
+        $conn = new mysqli($hostname, $username, $password, $databasenaam); 
+       echo "<table border = 2px color = black >";
+        $sql = "SELECT * FROM `elftal`";  
+        $result = $conn->query($sql);
+         for ($x = 0; $x < $result->num_rows; $x++) {
+                     $row = $result->fetch_assoc();
+                    echo "<tr>";
+            echo "<td>";
+            echo $row['id'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['naam'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['plaats'];
+            echo "</td>";
+            echo "</tr>";
+            }
+            echo"</tr>";
+   
+            echo '</table>';
+    
+        ?>
+        
+        <button onclick="Delete()">Delete</button>
+      
+        
+        
+        
+        
     </body>
 </html>
