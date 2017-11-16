@@ -51,7 +51,7 @@ if (isset($_GET['naam'])) {
         
     </head>
     <body>
-<<<<<<< HEAD
+
         
         <script  src="new.js"></script>
 
@@ -64,9 +64,7 @@ if (isset($_GET['naam'])) {
          <img src="voetbal.jpg" >
         <!--<a href="index.php">terug</a>-->
         <form action="index.php" method="get">
-=======
-        <form action="index.php" method="get"   >
->>>>>>> 4657424925b18621cd290f9e3bc09f8d67ee1a54
+
             <button type=submit value="teams"  >  terug </button>
         </form>
         <input type="button" onclick="ajaxCallJojo()" value="HIERKLIKKEN">
