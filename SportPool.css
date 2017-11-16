@@ -8,8 +8,8 @@ header{
     letter-spacing: 5px;
     padding-top: 50px;
     padding-bottom: 50px;
-  
-    
+
+
 
 }
 header::first-letter {
@@ -33,7 +33,7 @@ footer{
 }
 
 a{
-    
+
     letter-spacing: 1px;
 }
 /* Add a black background color to the top navigation */
@@ -66,26 +66,35 @@ a{
 }
 
 #id1{
-    text-align: center;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding-top: 20px;
-    width: 200px;
-   
+    width: 250px;
+
 }
 #id2{
-      padding-top: 20px;
-   float: right;
-   width: 200px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    float: right;
+    width: 250px;
 }
+
+
 #selectdiv{
-    
-   max-width: 800px;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   background-color: darkorange;
-   border-radius: 15px;
-   
+
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: goldenrod;
+    border-radius: 15px;
+
 }
 #customers {            
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
