@@ -33,11 +33,13 @@
             echo createTagSelect($conn, "id2");
             ?>
         </div>
-        <?php
-        $conn = connectionDB();
-        echo createtable($conn);
-        echo createtable($conn);
-        ?>  
+        <div id="teamtable">
+             <?php
+            $conn = connectionDB();
+            echo createtable($conn);
+            ?>  
+        </div>
+       
         <script>
             function checkdouble() {
                 x = document.getElementById("id1").selectedIndex;
