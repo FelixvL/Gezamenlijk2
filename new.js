@@ -8,10 +8,17 @@ function start(){
     document.getElementById('myImage').src='soccer10.gif';
 }
 function linken(){
+
     document.location='teams.php';
 }
-function Delete(){
-    alert('jojo');
-    document.getelementById()
-    
-}
+
+function insidetext(){
+            
+            document.getElementById("R").innerHTML=(document.getElementById("id1").value);
+            document.getElementById("R1").innerHTML=(document.getElementById("id2").value);
+            
+            
+            
+        }
+
+

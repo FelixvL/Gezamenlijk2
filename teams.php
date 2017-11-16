@@ -6,6 +6,9 @@ if (isset($_GET['naam'])) {
     $sql = "INSERT INTO `elftal`(`naam`, `plaats`)VALUES('" . $_GET['naam'] . "','" . $_GET['plaats'] . "')";
     $conn->query($sql);
 }
+if (isset($_GET['errorText'])) {
+    echo $_GET['errorText'];
+} 
 ?>
 
 
@@ -25,17 +28,18 @@ if (isset($_GET['naam'])) {
                 xhttp.send();                    
                 }
              function validate(form) {
-                fail = validateNaam(form.naam.value)
-
-                if (fail == "")
+                 fail = validateNaam(form.naam.value,"Naam")
+                fail += validateNaam(form.plaats.value,"Plaats")
+                if (fail == "") {
+//                    ajaxCallJojo()
                     return true
-                else {
+                } else {
                     alert(fail);
                     return false
                 }
             }
 
-            function validateNaam(field)
+            function validateNaam(field,paramVeld)
             {
 //                alert(field);
                 var pattern = new RegExp(/[()~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/); //unacceptable chars
@@ -43,7 +47,7 @@ if (isset($_GET['naam'])) {
                     return ("Gebruik alleen alpha en numerieke characters");
                 }
                 if (field == "") {
-                    return "Naam mag niet leeg zijn";
+                    return paramVeld+" mag niet leeg zijn  ";
                 }
                 return "";
             }
@@ -82,7 +86,8 @@ if (isset($_GET['naam'])) {
         </form>
 
         <input type="button" onclick="ajaxCallJojo()" value="HIERKLIKKEN">
-        <form action="teams.php" method="get"  onsubmit="return  validate(this)">
+        <!--<form action="teams2.php" method="get"  onsubmit="return  validate(this)">-->
+        <form action="komtTeamVoor.php" method="get"  onsubmit="return  validate(this)">
 
             Naam:<input type="text" name="naam">
             <br>
