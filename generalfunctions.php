@@ -2,30 +2,30 @@
 
 function connectionDB() {
 
-    $hostname = 'localhost';
+    $hostname = 'localhost';            // the credentials of the connection
     $databasenaam = 'sport_pool';
     $username = 'root';
     $password = '';
 
-    $conn = new mysqli($hostname, $username, $password, $databasenaam);
-    return $conn;
+    $conn = new mysqli($hostname, $username, $password, $databasenaam); // the instantiation of the mysqli object, on object TOTALLY specialised in DATABAS MANAGEMENT
+    return $conn;  // THAT object and connection is given back so that it can be catched at the call.
 }
 
 function createTagSelect($ParamConn, $selectidname) {
-    $sql = "SELECT * FROM `elftal`;";
-    $erinResultSet = $ParamConn->query($sql);
+    $sql = "SELECT * FROM `elftal`;";   // Make a query for the DATABASE
+    $erinResultSet = $ParamConn->query($sql); // THe execution of the SQL statement with ->query() on the mysql-object-parameter returns the RECORDSET in the variable ResultSet.
 
-    $eruit = "<select  id=$selectidname onChange=checkdouble(); >";
-    for ($x = 0; $x < $erinResultSet->num_rows; $x++) {
-        $row = $erinResultSet->fetch_assoc();
-        $eruit .= "<option>";
-        $eruit .= $row['naam'];
+    $eruit = "<select  id=$selectidname onChange=checkdouble(); >";  // assign the <select> openings tag with id and event=functioncall as string  
+    for ($x = 0; $x < $erinResultSet->num_rows; $x++) {// count the number of records in the recordset and make sure that the for loops that amount of times
+        $row = $erinResultSet->fetch_assoc();  // Get the next record AS an array into the variable row
+        $eruit .= "<option>";   // append new string information with .=
+        $eruit .= $row['naam']; // make the option with only the naam out of the record set
         $eruit .= "</option>";
     }
-    $eruit .= "</select>";
+    $eruit .= "</select>"; // <select closing tag
 
 
-    return $eruit;
+    return $eruit; // return the result
 }
 
 
