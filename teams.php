@@ -14,6 +14,16 @@ if (isset($_GET['naam'])) {
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
     </head>
     <body>
+        
+        <script  src="new.js"></script>
+
+<button onclick="start()">start</button>
+
+<img id="myImage" src="soccer10.gif" style="width:100px">
+
+<button onclick="jojo()">stop</button>
+ 
+         <img src="voetbal.jpg" >
         <!--<a href="index.php">terug</a>-->
         <form action="index.php" method="get">
             <button type=submit value="teams"  >  terug </button>
