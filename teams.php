@@ -76,5 +76,39 @@ if (isset($_GET['naam'])) {
         </form>
         <img id="team" src="football_team_1978.jpg" >
         <div id="teamDiv">startText</div>
+        
+        
+        <?php
+
+
+        $hostname = 'localhost';            
+        $databasenaam = 'sport_pool';
+        $username = 'root';
+        $password = '';
+
+        $conn = new mysqli($hostname, $username, $password, $databasenaam); 
+       echo "<table>";
+        $sql = "SELECT * FROM `elftal`";  
+        $result = $conn->query($sql);
+         for ($x = 0; $x < $result->num_rows; $x++) {
+                     $row = $result->fetch_assoc();
+                    echo "<tr>";
+            echo "<td>";
+            echo $row['id'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['naam'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['plaats'];
+            echo "</td>";
+          echo "</tr>";
+    }
+     echo"</tr>";
+   
+     echo '</table>';
+    
+        ?>
+        
     </body>
 </html>
