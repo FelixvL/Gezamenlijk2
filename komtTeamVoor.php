@@ -13,10 +13,10 @@ if (!$connectie->connect_error) {
 
     $result = mysqli_query($connectie, $sql);
     if ($result->num_rows == 0) {
-        header("Location: teams2.php?naam=$naamTeam&plaats=$naamPlaats");
+        header("Location: teams.php?naam=$naamTeam&plaats=$naamPlaats");
     } else {
         $errorText = "Bestaat al";
-        header("Location: teams2.php?errorText=$errorText");
+        header("Location: teams.php?errorText=$errorText");
     }
 }
 
