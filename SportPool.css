@@ -8,8 +8,8 @@ header{
     letter-spacing: 5px;
     padding-top: 50px;
     padding-bottom: 50px;
-  
-    
+
+
 
 }
 header::first-letter {
@@ -25,7 +25,7 @@ footer{
     left: 0;
     background-color: #333;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -33,7 +33,7 @@ footer{
 }
 
 a{
-    
+
     letter-spacing: 1px;
 }
 /* Add a black background color to the top navigation */
@@ -66,36 +66,56 @@ a{
 }
 
 #id1{
-    text-align: center;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding-top: 20px;
-    width: 200px;
-   
+    width: 300px;
+
 }
 #id2{
-      padding-top: 20px;
-   float: right;
-   width: 200px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    float: right;
+    width: 300px;
 }
+
+
 #selectdiv{
-    
-   max-width: 800px;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   background-color: darkorange;
-   border-radius: 15px;
-   
+
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: goldenrod;
+    border-radius: 15px;
+
 }
-#customers {            
+
+
+#customers {   
+
+    align-content: center;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 50%;
+    width: 800px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 #customers td, #customers th {
-    border: 1px solid #ddd;
+
     padding: 8px;
+
 }
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}

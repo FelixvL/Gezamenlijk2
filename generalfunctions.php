@@ -15,7 +15,7 @@ function createTagSelect($ParamConn, $selectidname) {
     $sql = "SELECT * FROM `elftal`;";   // Make a query for the DATABASE
     $erinResultSet = $ParamConn->query($sql); // THe execution of the SQL statement with ->query() on the mysql-object-parameter returns the RECORDSET in the variable ResultSet.
 
-    $eruit = "<select  id=$selectidname onChange=checkdouble(); >";  // assign the <select> openings tag with id and event=functioncall as string  
+    $eruit = "<select id=$selectidname onChange=checkdouble(); >";  // assign the <select> openings tag with id and event=functioncall as string  
     for ($x = 0; $x < $erinResultSet->num_rows; $x++) {// count the number of records in the recordset and make sure that the for loops that amount of times
         $row = $erinResultSet->fetch_assoc();  // Get the next record AS an array into the variable row
         $eruit .= "<option>";   // append new string information with .=

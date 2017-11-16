@@ -5,7 +5,7 @@ function jojo(){
 }
 
 function start(){
-    alert('hi')
+   
     document.getElementById('myImage').src='soccer10.gif';
 }
 function linken(){
