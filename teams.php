@@ -61,6 +61,17 @@ if (isset($_GET['naam'])) {
         
     </head>
     <body>
+        
+        <header> Football Pool </header>
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a href="index.php" class="active">Home</a>
+                <a href="teams.php"> Teams </a>
+                <a href="#players">Players </a>
+                <a href="#matches">Matches</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
             <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
 
         <form action="index.php" method="get"   >
