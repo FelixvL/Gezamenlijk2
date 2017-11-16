@@ -62,19 +62,38 @@ if (isset($_GET['naam'])) {
         
     </head>
     <body>
+        
+        <header> Football Pool </header>
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a href="index.php" class="active">Home</a>
+                <a href="teams.php"> Teams </a>
+                <a href="#players">Players </a>
+                <a href="#matches">Matches</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
             <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
 
         <form action="index.php" method="get"   >
             <button type=submit value="teams"  >  terug </button>
         </form>
+
         <input type="button" onclick="ajaxCallJojo()" value="HIERKLIKKEN">
         <form action="teams.php" method="get"  onsubmit="return  validate(this)">
+
             Naam:<input type="text" name="naam">
             <br>
             Plaats:<input type="text" name="plaats">
             <br>
             <input type="submit" value="voeg toe">
         </form>
+
+        
+        <form action="spelers.php" method="get">
+            <button type=submit value="speler" > spelers </button>
+        </form>
+
         <img id="team" src="football_team_1978.jpg" >
         <div id="teamDiv">startText</div>
         
