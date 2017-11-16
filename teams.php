@@ -15,6 +15,7 @@ if (isset($_GET['errorText'])) {
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
+         <script  src="new.js"></script>  <!-- import of external js file called new.js -->
         <script>
                 function searchTeam(){
                 var searchString = document.getElementById("inputTextFieldTeam").value;
@@ -106,6 +107,7 @@ if (isset($_GET['errorText'])) {
         
         
         <?php
+
         
          $hostname = 'localhost';            // the credentials of the connection
          $databasenaam = 'sport_pool';
@@ -113,7 +115,7 @@ if (isset($_GET['errorText'])) {
          $password = '';
 
            $conn = new mysqli($hostname, $username, $password, $databasenaam);
-                 echo "<table>";
+      echo "<table border = 2px color = black >";
              $sql = "SELECT * FROM `elftal`";
             $result = $conn->query($sql);
                     for ($x = 0; $x <1; $x++) {
@@ -122,6 +124,7 @@ if (isset($_GET['errorText'])) {
             echo"<th>";echo"Team place";echo"</th>";
     }
     for ($x = 0; $x < $result->num_rows; $x++) {
+
                      $row = $result->fetch_assoc();
                     echo "<tr>";
             echo "<td>";
@@ -133,24 +136,14 @@ if (isset($_GET['errorText'])) {
             echo "<td>";
             echo $row['plaats'];
             echo "</td>";
+
           echo "</tr>";
     }
      echo"</tr>";
     // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($hostname, $username, $password, $databasenaam);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
-// sql to delete a record
-$sql = "DELETE FROM MyGuests WHERE id=3";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $conn->error;
-}
 
 $conn->close();
 ?>
@@ -160,5 +153,6 @@ $conn->close();
         
        <button onclick="Delete()">Delete</button>
        
+
     </body>
 </html>
