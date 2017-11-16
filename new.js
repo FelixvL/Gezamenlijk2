@@ -7,3 +7,11 @@ function jojo(){
 function start(){
     document.getElementById('myImage').src='soccer10.gif';
 }
+function linken(){
+    document.location='teams.php';
+}
+function Delete(){
+    alert('jojo');
+    document.getelementById()
+    
+}

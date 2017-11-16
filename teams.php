@@ -13,7 +13,17 @@ if (isset($_GET['naam'])) {
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
         <script>
-            
+                function searchTeam(){
+                var searchString = document.getElementById("inputTextFieldTeam").value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("teamDiv").innerHTML = xhttp.responseText;
+                    }
+                };
+                xhttp.open("GET", "searchTeams.php?teamSearch="+searchString, true);
+                xhttp.send();                    
+                }
              function validate(form) {
                 fail = validateNaam(form.naam.value)
 
@@ -52,10 +62,11 @@ if (isset($_GET['naam'])) {
     </head>
     <body>
 
+
         
         <script  src="new.js"></script>
-
-<button onclick="start()">start</button>
+ 
+<button  onclick="start()">start</button>
 
 <img id="myImage" src="soccer10.gif" style="width:100px">
 
@@ -63,7 +74,11 @@ if (isset($_GET['naam'])) {
  
          <img src="voetbal.jpg" >
         <!--<a href="index.php">terug</a>-->
-        <form action="index.php" method="get">
+
+
+            <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
+
+        <form action="index.php" method="get"   >
 
             <button type=submit value="teams"  >  terug </button>
         </form>
@@ -76,5 +91,63 @@ if (isset($_GET['naam'])) {
             <input type="submit" value="voeg toe">
         </form>
         <img id="team" src="football_team_1978.jpg" >
+        <div id="teamDiv">startText</div>
+        
+        
+        <?php
+        
+         $hostname = 'localhost';            // the credentials of the connection
+         $databasenaam = 'sport_pool';
+         $username = 'root';
+         $password = '';
+
+           $conn = new mysqli($hostname, $username, $password, $databasenaam);
+                 echo "<table>";
+             $sql = "SELECT * FROM `elftal`";
+            $result = $conn->query($sql);
+                    for ($x = 0; $x <1; $x++) {
+            echo"<th>";echo"Team Id";echo"</th>";
+            echo"<th>";echo"Team a";echo"</th>";
+            echo"<th>";echo"Team place";echo"</th>";
+    }
+    for ($x = 0; $x < $result->num_rows; $x++) {
+                     $row = $result->fetch_assoc();
+                    echo "<tr>";
+            echo "<td>";
+            echo $row['id'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['naam'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['plaats'];
+            echo "</td>";
+          echo "</tr>";
+    }
+     echo"</tr>";
+    // Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+// sql to delete a record
+$sql = "DELETE FROM MyGuests WHERE id=3";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+
+$conn->close();
+?>
+        ?>
+        
+        
+        
+       <button onclick="Delete()">Delete</button>
+       
     </body>
 </html>
