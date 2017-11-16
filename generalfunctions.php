@@ -33,7 +33,7 @@ function createtable ($conn){
     
     $sql = "SELECT * FROM `elftal`;";
     $result = $conn->query($sql);
-    
+    echo "<table id=customers>";
     $TR= "<tr>";
     for ($x = 0; $x <1; $x++) {
             echo"<th>";echo"Team Id";echo"</th>";
@@ -55,6 +55,7 @@ function createtable ($conn){
           echo "</tr>";
     }
      echo"</tr>";
+      echo "<table id=customers>";
     return$TR;
         
 }
