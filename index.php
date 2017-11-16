@@ -45,8 +45,9 @@
                 if (x === y)
                 {
                     alert("Please choose different teams");
-                }
-
+                }else
+                    alert ("we will show the new time in the table");
+                    insidetext();
             }
 
         </script>
