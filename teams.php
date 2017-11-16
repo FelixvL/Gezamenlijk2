@@ -12,6 +12,7 @@ if (isset($_GET['naam'])) {
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
+         <script  src="new.js"></script>  <!-- import of external js file called new.js -->
         <script>
                 function searchTeam(){
                 var searchString = document.getElementById("inputTextFieldTeam").value;
@@ -87,7 +88,7 @@ if (isset($_GET['naam'])) {
         $password = '';
 
         $conn = new mysqli($hostname, $username, $password, $databasenaam); 
-       echo "<table>";
+       echo "<table border = 2px color = black >";
         $sql = "SELECT * FROM `elftal`";  
         $result = $conn->query($sql);
          for ($x = 0; $x < $result->num_rows; $x++) {
@@ -102,13 +103,19 @@ if (isset($_GET['naam'])) {
             echo "<td>";
             echo $row['plaats'];
             echo "</td>";
-          echo "</tr>";
-    }
-     echo"</tr>";
+            echo "</tr>";
+            }
+            echo"</tr>";
    
-     echo '</table>';
+            echo '</table>';
     
         ?>
+        
+        <button onclick="Delete()">Delete</button>
+      
+        
+        
+        
         
     </body>
 </html>
