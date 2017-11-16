@@ -33,6 +33,12 @@
             <button type=submit value="teams"  >  teams aanmaken </button>  <!-- we misused the form to get the submit button to link to the new page -->
         </form>
 
+
+        <button onclick="linken()" >Tweede poging</button>
+        <button onclick="javascript:document.location='teams.php';" >Derde poging</button>
+        <a href="teams.php">vier poging</a>
+
+
         <br> kleine verbetering aa
 
 

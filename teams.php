@@ -13,7 +13,17 @@ if (isset($_GET['naam'])) {
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
         <script>
-            
+                function searchTeam(){
+                var searchString = document.getElementById("inputTextFieldTeam").value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("teamDiv").innerHTML = xhttp.responseText;
+                    }
+                };
+                xhttp.open("GET", "searchTeams.php?teamSearch="+searchString, true);
+                xhttp.send();                    
+                }
              function validate(form) {
                 fail = validateNaam(form.naam.value)
 
@@ -51,6 +61,8 @@ if (isset($_GET['naam'])) {
         
     </head>
     <body>
+            <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
+
         <form action="index.php" method="get"   >
             <button type=submit value="teams"  >  terug </button>
         </form>
@@ -63,5 +75,6 @@ if (isset($_GET['naam'])) {
             <input type="submit" value="voeg toe">
         </form>
         <img id="team" src="football_team_1978.jpg" >
+        <div id="teamDiv">startText</div>
     </body>
 </html>
