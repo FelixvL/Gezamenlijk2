@@ -6,12 +6,16 @@ if (isset($_GET['naam'])) {
     $sql = "INSERT INTO `elftal`(`naam`, `plaats`)VALUES('" . $_GET['naam'] . "','" . $_GET['plaats'] . "')";
     $conn->query($sql);
 }
+if (isset($_GET['errorText'])) {
+    echo $_GET['errorText'];
+} 
 ?>
 
 
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href="SportPool.css">  
+         <script  src="new.js"></script>  <!-- import of external js file called new.js -->
         <script>
                 function searchTeam(){
                 var searchString = document.getElementById("inputTextFieldTeam").value;
@@ -25,17 +29,18 @@ if (isset($_GET['naam'])) {
                 xhttp.send();                    
                 }
              function validate(form) {
-                fail = validateNaam(form.naam.value)
-
-                if (fail == "")
+                 fail = validateNaam(form.naam.value,"Naam")
+                fail += validateNaam(form.plaats.value,"Plaats")
+                if (fail == "") {
+//                    ajaxCallJojo()
                     return true
-                else {
+                } else {
                     alert(fail);
                     return false
                 }
             }
 
-            function validateNaam(field)
+            function validateNaam(field,paramVeld)
             {
 //                alert(field);
                 var pattern = new RegExp(/[()~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/); //unacceptable chars
@@ -43,7 +48,7 @@ if (isset($_GET['naam'])) {
                     return ("Gebruik alleen alpha en numerieke characters");
                 }
                 if (field == "") {
-                    return "Naam mag niet leeg zijn";
+                    return paramVeld+" mag niet leeg zijn  ";
                 }
                 return "";
             }
@@ -61,6 +66,7 @@ if (isset($_GET['naam'])) {
         
     </head>
     <body>
+
         
         <header> Football Pool </header>
         <nav>
@@ -72,14 +78,17 @@ if (isset($_GET['naam'])) {
                 <a href="#about">About</a>
             </div>
         </nav>
+
             <input type="text" onkeyup="searchTeam()" id="inputTextFieldTeam" >
 
         <form action="index.php" method="get"   >
+
             <button type=submit value="teams"  >  terug </button>
         </form>
 
         <input type="button" onclick="ajaxCallJojo()" value="HIERKLIKKEN">
-        <form action="teams.php" method="get"  onsubmit="return  validate(this)">
+        <!--<form action="teams2.php" method="get"  onsubmit="return  validate(this)">-->
+        <form action="komtTeamVoor.php" method="get"  onsubmit="return  validate(this)">
 
             Naam:<input type="text" name="naam">
             <br>
@@ -95,5 +104,55 @@ if (isset($_GET['naam'])) {
 
         <img id="team" src="football_team_1978.jpg" >
         <div id="teamDiv">startText</div>
+        
+        
+        <?php
+
+        
+         $hostname = 'localhost';            // the credentials of the connection
+         $databasenaam = 'sport_pool';
+         $username = 'root';
+         $password = '';
+
+           $conn = new mysqli($hostname, $username, $password, $databasenaam);
+      echo "<table border = 2px color = black >";
+             $sql = "SELECT * FROM `elftal`";
+            $result = $conn->query($sql);
+                    for ($x = 0; $x <1; $x++) {
+            echo"<th>";echo"Team Id";echo"</th>";
+            echo"<th>";echo"Team a";echo"</th>";
+            echo"<th>";echo"Team place";echo"</th>";
+    }
+    for ($x = 0; $x < $result->num_rows; $x++) {
+
+                     $row = $result->fetch_assoc();
+                    echo "<tr>";
+            echo "<td>";
+            echo $row['id'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['naam'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['plaats'];
+            echo "</td>";
+
+          echo "</tr>";
+    }
+     echo"</tr>";
+    // Create connection
+$conn = new mysqli($hostname, $username, $password, $databasenaam);
+// Check connection
+
+
+$conn->close();
+?>
+        ?>
+        
+        
+        
+       <button onclick="Delete()">Delete</button>
+       
+
     </body>
 </html>

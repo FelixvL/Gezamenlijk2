@@ -5,11 +5,14 @@ function jojo(){
 }
 
 function start(){
+   
     document.getElementById('myImage').src='soccer10.gif';
 }
 function linken(){
+
     document.location='teams.php';
 }
+
 function insidetext(){
             
             document.getElementById("R").innerHTML=(document.getElementById("id1").value);
@@ -18,3 +21,5 @@ function insidetext(){
             
             
         }
+
+

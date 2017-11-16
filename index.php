@@ -33,6 +33,7 @@
             echo createTagSelect($conn, "id2");
             ?>
         </div>
+
         <div id="teamtable">
              <?php
             $conn = connectionDB();
@@ -40,6 +41,7 @@
             ?>  
         </div>
        
+
         <script>
             function checkdouble() {
                 x = document.getElementById("id1").selectedIndex;
@@ -48,7 +50,6 @@
                 {
                     alert("Please choose different teams");
                 }else
-                    alert ("we will show the new time in the table");
                     insidetext();
             }
 
